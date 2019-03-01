@@ -11,7 +11,7 @@ import {environment} from '../environments/environment';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { LoginComponent } from './signup-login/login/login.component';
 import { SignupComponent } from './signup-login/signup/signup.component';
-
+import {UserSignInUpModule} from './signup-login/user-signin-up.module';
 
 
 
@@ -29,6 +29,7 @@ import { SignupComponent } from './signup-login/signup/signup.component';
     AuthModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
+    UserSignInUpModule,
     AngularFireAuthModule
   ],
   providers: [],
