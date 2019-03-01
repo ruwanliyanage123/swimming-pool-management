@@ -178,14 +178,11 @@ export class SignupComponent implements OnInit {
 
         this.showSpinner = false;
 
-        if (error1.code == 'auth/email-already-in-use')
-
+        if(error1.code === 'auth/email-already-in-use') {
           this.state = this.signupStates[0];
-
-        else
-
+        } else {
           this.state = this.signupStates[1];
-
+        }
       }
 
     );
