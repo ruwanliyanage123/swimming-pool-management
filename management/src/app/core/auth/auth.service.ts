@@ -18,7 +18,7 @@ import {switchMap} from 'rxjs/operators';
 
 import {fromPromise} from 'rxjs/internal-compatibility';
 
-import {User} from '../../shared/model/user';
+// import {User} from '../../shared/model/user';
 
 
 
