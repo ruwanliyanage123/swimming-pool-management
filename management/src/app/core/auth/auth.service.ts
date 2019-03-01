@@ -18,11 +18,7 @@ import {switchMap} from 'rxjs/operators';
 
 import {fromPromise} from 'rxjs/internal-compatibility';
 
-// import {User} from '../../shared/model/user';
-
-
-
-
+import {User} from '../../shared/model/user';
 
 @Injectable()
 
@@ -35,10 +31,6 @@ export class AuthService {
 
 
   cacheUser;
-
-
-
-
 
   constructor(
 
@@ -118,7 +110,7 @@ export class AuthService {
 
       .then((credential) => {
 
-        const data: User = {
+        const data:User = {
 
           uid: credential.user.uid,
 
