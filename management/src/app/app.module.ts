@@ -15,12 +15,14 @@ import {UserSignInUpModule} from './signup-login/user-signin-up.module';
 import { HomeComponent } from './home/home.component';
 import {MatButtonModule} from '@angular/material';
 import {ButtonsModule, CarouselModule, MDBBootstrapModule, WavesModule} from 'angular-bootstrap-md';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
