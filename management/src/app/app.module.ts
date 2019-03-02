@@ -43,7 +43,7 @@ import {ContactComponent} from './contact-component/contact.component';
     WavesModule,
     ButtonsModule,
     MatButtonModule,
-    NavbarModule
+    NavbarModule,
     AngularFireAuthModule
   ],
   providers: [],
