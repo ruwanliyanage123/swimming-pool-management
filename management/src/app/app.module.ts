@@ -1,22 +1,24 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
 import {AuthModule} from './core/auth/auth.module';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {environment} from '../environments/environment';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { LoginComponent } from './signup-login/login/login.component';
-import { SignupComponent } from './signup-login/signup/signup.component';
+import {LoginComponent} from './signup-login/login/login.component';
+import {SignupComponent} from './signup-login/signup/signup.component';
 import {UserSignInUpModule} from './signup-login/user-signin-up.module';
-import { HomeComponent } from './home/home.component';
+import {HomeComponent} from './home/home.component';
 import {MatButtonModule} from '@angular/material';
 import {ButtonsModule, CarouselModule, MDBBootstrapModule, WavesModule} from 'angular-bootstrap-md';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-import { ContactComponentComponent } from './contact-component/contact-component.component';
+import {UserProfileComponent} from './user-profile/user-profile.component';
+import {ContactComponent} from './contact-component/contact.component';
+
+
 
 
 @NgModule({
@@ -24,7 +26,8 @@ import { ContactComponentComponent } from './contact-component/contact-component
     AppComponent,
     HomeComponent,
     UserProfileComponent,
-    ContactComponentComponent
+    ContactComponent
+
   ],
   imports: [
     BrowserModule,
