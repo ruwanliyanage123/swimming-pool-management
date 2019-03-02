@@ -13,6 +13,7 @@ import { LoginComponent } from './signup-login/login/login.component';
 import { SignupComponent } from './signup-login/signup/signup.component';
 import {UserSignInUpModule} from './signup-login/user-signin-up.module';
 import { HomeComponent } from './home/home.component';
+import {MatButtonModule} from '@angular/material';
 import {ButtonsModule, CarouselModule, MDBBootstrapModule, WavesModule} from 'angular-bootstrap-md';
 
 
@@ -34,6 +35,7 @@ import {ButtonsModule, CarouselModule, MDBBootstrapModule, WavesModule} from 'an
     CarouselModule,
     WavesModule,
     ButtonsModule,
+    MatButtonModule,
     AngularFireAuthModule
   ],
   providers: [],

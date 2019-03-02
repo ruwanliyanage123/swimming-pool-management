@@ -16,3 +16,18 @@
 .nav-link{
   color: black;
 }
+
+.in-car
+
+
+ 
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: large; 
+  z-index: 1000;
+}
+
+
+ 
