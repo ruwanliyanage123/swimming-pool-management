@@ -13,7 +13,7 @@ import {LoginComponent} from './signup-login/login/login.component';
 import {SignupComponent} from './signup-login/signup/signup.component';
 import {UserSignInUpModule} from './signup-login/user-signin-up.module';
 import {HomeComponent} from './home/home.component';
-import {MatButtonModule, MatDialogModule, MatOptionModule, MatSelectModule, MatTabsModule} from '@angular/material';
+import {MatButtonModule, MatDialogModule, MatOptionModule, MatSelectModule} from '@angular/material';
 import {ButtonsModule, CarouselModule, MDBBootstrapModule, NavbarModule, WavesModule} from 'angular-bootstrap-md';
 import {UserProfileComponent} from './user-profile/user-profile.component';
 import {ContactComponent} from './contact-component/contact.component';
@@ -26,7 +26,7 @@ import {FlatpickrModule} from 'angularx-flatpickr';
 import {ServicesModule} from './services/services.module';
 import {DlDateTimePickerDateModule} from 'angular-bootstrap-datetimepicker';
 import { ButtonWaterComponent } from './shared/button-water/button-water.component';
-
+import {SharedModule} from './shared/shared.module';
 
 
 
@@ -72,7 +72,7 @@ import { ButtonWaterComponent } from './shared/button-water/button-water.compone
     DlDateTimePickerDateModule,
     MatOptionModule,
     MatSelectModule,
-    MatTabsModule
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent],
