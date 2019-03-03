@@ -24,6 +24,7 @@ import {FormsModule} from '@angular/forms';
 import {NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
 import {FlatpickrModule} from 'angularx-flatpickr';
 import {ServicesModule} from './services/services.module';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import {ServicesModule} from './services/services.module';
     HomeComponent,
     UserProfileComponent,
     ContactComponent,
-    EventCalComponent
+    EventCalComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
