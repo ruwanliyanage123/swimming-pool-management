@@ -9,7 +9,6 @@ import {fromPromise} from 'rxjs/internal-compatibility';
 import {User} from '../../shared/model/user';
 
 @Injectable()
-
 export class AuthService {
   user:Observable<any>;
   cacheUser;
@@ -24,12 +23,15 @@ export class AuthService {
       switchMap(user => {
         if (user) {
           this.cacheUser = user;
-          return of(user)
+          return of(user);
         } else {
-          return of(null)
+           return of(null);
         }
+
       })
-    )
+
+    );
+
   }
 
   googleLogin() {
@@ -37,20 +39,23 @@ export class AuthService {
     return this.oAuthLogin(provider);
   }
 
-  emailLogin(email,password)
-  {
+  faceBookLogin() {
+    const provider = new auth.FacebookAuthProvider();
+    return this.oAuthLogin(provider);
+  }
+
+  emailLogin(email, password) {
     return fromPromise(this.afAuth.auth.signInWithEmailAndPassword(email,password))
   }
 
-  emailSignUp(email,password)
-  {
+  emailSignUp(email, password) {
     return fromPromise(this.afAuth.auth.createUserWithEmailAndPassword(email,password))
   }
 
   private oAuthLogin(provider) {
     return this.afAuth.auth.signInWithPopup(provider)
       .then((credential) => {
-        const data:User = {
+        const data: User = {
           uid: credential.user.uid,
           email: credential.user.email,
           displayName: credential.user.displayName,
@@ -60,7 +65,7 @@ export class AuthService {
       })
   }
 
- updateUserData(user,userData) {
+  updateUserData(user,userData) {
     // Sets user data to firestore on login
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
     return fromPromise(userRef.set(userData, {merge: true})) as Observable<any>;
@@ -73,18 +78,14 @@ export class AuthService {
         if (next != null)
           fromPromise(next.sendEmailVerification()).subscribe(next => success.next(true), error => success.next(false))
       });
-
     return success as Observable<boolean>
   }
 
+
+
   signOut() {
-
     this.afAuth.auth.signOut().then(() => {
-
-      this.router.navigate(['/login']);
-
+      this.router.navigate(['']);
     });
-
   }
-
 }
