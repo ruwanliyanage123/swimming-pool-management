@@ -13,7 +13,7 @@ import {LoginComponent} from './signup-login/login/login.component';
 import {SignupComponent} from './signup-login/signup/signup.component';
 import {UserSignInUpModule} from './signup-login/user-signin-up.module';
 import {HomeComponent} from './home/home.component';
-import {MatButtonModule,MatDialogModule} from '@angular/material';
+import {MatButtonModule, MatDialogModule, MatOptionModule, MatSelectModule, MatTabsModule} from '@angular/material';
 import {ButtonsModule, CarouselModule, MDBBootstrapModule, NavbarModule, WavesModule} from 'angular-bootstrap-md';
 import {UserProfileComponent} from './user-profile/user-profile.component';
 import {ContactComponent} from './contact-component/contact.component';
@@ -24,7 +24,8 @@ import {FormsModule} from '@angular/forms';
 import {NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
 import {FlatpickrModule} from 'angularx-flatpickr';
 import {ServicesModule} from './services/services.module';
-import {LoginComponent} from './signup-login/login/login.component';
+import {DlDateTimePickerDateModule} from 'angular-bootstrap-datetimepicker';
+
 
 
 
@@ -63,7 +64,12 @@ import {LoginComponent} from './signup-login/login/login.component';
       useFactory: adapterFactory
     }),
     ServicesModule,
-    MatDialogModule
+    MatDialogModule,
+    MatDialogModule,
+    DlDateTimePickerDateModule,
+    MatOptionModule,
+    MatSelectModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
