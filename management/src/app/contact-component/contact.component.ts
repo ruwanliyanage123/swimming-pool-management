@@ -28,21 +28,21 @@ export class ContactComponent implements OnInit {
 
 
 
-  // constructor(private formBuilder: FormBuilder,private service: PoolReservationService) {
+  constructor(private formBuilder: FormBuilder,private service: PoolReservationService) {
 
-  //   this.contactUsFormGroup = formBuilder.group( {
+    this.contactUsFormGroup = formBuilder.group( {
 
-  //     contactName: ['', [Validators.required, Validators.minLength(1)] ],
+      contactName: ['', [Validators.required, Validators.minLength(1)] ],
 
-  //     contactEmail: ['', [Validators.required, Validators.email] ],
+      contactEmail: ['', [Validators.required, Validators.email] ],
 
-  //     contactSubject: ['', Validators.minLength(1)],
+      contactSubject: ['', Validators.minLength(1)],
 
-  //     contactMessage: ['', Validators.minLength(10)]
+      contactMessage: ['', Validators.minLength(10)]
 
-  //   } );
+    } );
 
-  // }
+  }
 
 
 
