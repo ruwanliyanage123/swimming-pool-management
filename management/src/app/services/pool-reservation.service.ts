@@ -28,22 +28,22 @@ export class PoolReservationService {
 
   }
 
-  // method to store contact us details in the firestore
+  //method to store contact us details in the firestore
 
-  // addContactUsForum(event){
+  addContactUsForum(event){
 
-  //   return this.firestore.collection('contactus/').add({
+    return this.firestore.collection('contactus/').add({
 
-  //     contactEmail: event.value.contactEmail,
+      contactEmail: event.value.contactEmail,
 
-  //     contactMessage: event.value.contactMessage,
+      contactMessage: event.value.contactMessage,
 
-  //     contactName: event.value.contactName,
+      contactName: event.value.contactName,
 
-  //     contactSubject: event.value.contactSubject
+      contactSubject: event.value.contactSubject
 
-  //   });
+    });
 
-  // }
+  }
 
 }
