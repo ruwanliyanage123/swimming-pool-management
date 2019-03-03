@@ -141,7 +141,7 @@
   
       "no-switch-case-fall-through": true,
   
-      "no-trailing-whitespace": true,
+      "no-trailing-whitespace": false,
   
       "no-unnecessary-initializer": true,
   
@@ -181,7 +181,7 @@
   
       "semicolon": [
   
-        true,
+        false,
   
         "always"
   
@@ -252,7 +252,7 @@
       "use-pipe-transform-interface": true,
   
       "component-class-suffix": true,
-  
+
       "directive-class-suffix": true
   
     }
