@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
 
-import {endOfDay, isSameDay, isSameMonth, startOfDay} from 'date-fns';
+import {isSameDay, isSameMonth} from 'date-fns';
 
 import {Subject} from 'rxjs';
 
@@ -90,6 +90,16 @@ export class EventCalComponent implements OnInit {
 
 
 
+  startDate: Date;
+
+  peopleCount;
+
+  durationHours;
+
+  package;
+
+
+
   actions: CalendarEventAction[] = [
 
     {
@@ -126,7 +136,7 @@ export class EventCalComponent implements OnInit {
 
 
 
-  events: CalendarEvent[] = [
+  events: MyCalenderEvent[] = [
 
     // {
 
@@ -240,21 +250,33 @@ export class EventCalComponent implements OnInit {
 
   addEvent(): void {
 
+
+
+    const startDate = this.startDate;
+
     this.events.push({
 
-      title: 'New event',
+      title: 'Reservation',
 
-      start: startOfDay(new Date()),
+      start: this.startDate,
 
-      end: endOfDay(new Date()),
+      end: new Date(startDate.getUTCFullYear(), startDate.getMonth(), startDate.getDate(),
 
-      color: colors.red,
+        startDate.getHours() + Number(this.hourSelector.value), startDate.getMinutes()),
+
+      duration: Number(this.hourSelector.value),
+
+      package: this.package,
+
+      peopleCount: this.peopleCount,
+
+      color: colors.blue,
 
       draggable: true,
 
       resizable: {
 
-        beforeStart: true,
+        beforeStart: false,
 
         afterEnd: true
 
@@ -268,6 +290,8 @@ export class EventCalComponent implements OnInit {
 
 
 
+
+
   changeEvent(value: Date, index) {
 
     const a = value;
@@ -277,8 +301,17 @@ export class EventCalComponent implements OnInit {
     console.log(b);
 
     this.events[index].end = b;
+
+
+
     this.refresh.next();
+
+
+
     console.log(this.events);
+
+
+
   }
 
 
@@ -288,5 +321,17 @@ export class EventCalComponent implements OnInit {
 
 
   }
+
+}
+
+
+
+export interface MyCalenderEvent implements CalendarEvent {
+
+  package?
+
+  peopleCount?
+
+  duration?
 
 }
