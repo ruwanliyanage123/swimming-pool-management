@@ -25,6 +25,7 @@ import {NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
 import {FlatpickrModule} from 'angularx-flatpickr';
 import {ServicesModule} from './services/services.module';
 import {DlDateTimePickerDateModule} from 'angular-bootstrap-datetimepicker';
+import { ButtonWaterComponent } from './shared/button-water/button-water.component';
 
 
 
@@ -35,7 +36,8 @@ import {DlDateTimePickerDateModule} from 'angular-bootstrap-datetimepicker';
     HomeComponent,
     UserProfileComponent,
     ContactComponent,
-    EventCalComponent
+    EventCalComponent,
+    ButtonWaterComponent
    
   ],
   imports: [
