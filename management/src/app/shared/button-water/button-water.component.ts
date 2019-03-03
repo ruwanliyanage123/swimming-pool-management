@@ -14,11 +14,11 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 export class ButtonWaterComponent implements OnInit {
 
-
-
   @Input('text')
-
-  text: string;
+  
+  buttonText: string;
+  @Input('width')
+  width = '50px';
 
   @Output('clickButton')
 
