@@ -17,12 +17,13 @@ import {MatButtonModule} from '@angular/material';
 import {ButtonsModule, CarouselModule, MDBBootstrapModule, NavbarModule, WavesModule} from 'angular-bootstrap-md';
 import {UserProfileComponent} from './user-profile/user-profile.component';
 import {ContactComponent} from './contact-component/contact.component';
-import {CalendarModule} from 'angular-calendar';
+import {CalendarModule,DateAdapter} from 'angular-calendar';
 import {adapterFactory} from 'angular-calendar/date-adapters/date-fns';
 import {EventCalComponent} from './event-cal/event-cal.component';
 import {FormsModule} from '@angular/forms';
-// import {NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
-// import {FlatpickrModule} from 'angularx-flatpickr';
+import {NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
+import {FlatpickrModule} from 'angularx-flatpickr';
+import {ServicesModule} from './services/services.module';
 
 
 @NgModule({
@@ -51,13 +52,14 @@ import {FormsModule} from '@angular/forms';
     AngularFireAuthModule,
     NavbarModule,
     FormsModule,
-    // NgbModalModule,
-    // FlatpickrModule.forRoot(),
+    NgbModalModule,
+    FlatpickrModule.forRoot(),
 
-    // CalendarModule.forRoot({
-    //   provide: DateAdapter,
-    //   useFactory: adapterFactory
-    // })
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    }),
+    ServicesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
