@@ -1,12 +1,14 @@
-import {ChangeDetectionStrategy, Component, TemplateRef, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
 
-import {addDays, addHours, endOfDay, endOfMonth, isSameDay, isSameMonth, startOfDay, subDays} from 'date-fns';
+import {endOfDay, isSameDay, isSameMonth, startOfDay} from 'date-fns';
 
 import {Subject} from 'rxjs';
 
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 import {CalendarEvent, CalendarEventAction, CalendarEventTimesChangedEvent, CalendarView} from 'angular-calendar';
+
+import {MatSelect} from '@angular/material';
 
 
 
@@ -52,11 +54,17 @@ const colors: any = {
 
 })
 
-export class EventCalComponent {
+export class EventCalComponent implements OnInit {
 
   @ViewChild('modalContent')
 
   modalContent: TemplateRef<any>;
+
+
+
+  @ViewChild('selectHours')
+
+  hourSelector: MatSelect;
 
 
 
@@ -120,91 +128,51 @@ export class EventCalComponent {
 
   events: CalendarEvent[] = [
 
-    {
+    // {
 
-      start: subDays(startOfDay(new Date()), 1),
+    //   start: subDays(startOfDay(new Date()), 1),
 
-      end: addDays(new Date(), 1),
+    //   end: addDays(new Date(), 1),
 
-      title: 'A 3 day event',
+    //   title: 'A 3 day event',
 
-      color: colors.red,
+    //   color: colors.red,
 
-      actions: this.actions,
+    //   actions: this.actions,
 
-      allDay: true,
+    //   allDay: true,
 
-      resizable: {
+    //   resizable: {
 
-        beforeStart: true,
+    //     beforeStart: true,
 
-        afterEnd: true
+    //     afterEnd: true
 
-      },
+    //   },
 
-      draggable: true
+    //   draggable: true
 
-    },
+    // }
 
-    {
 
-      start: startOfDay(new Date()),
-
-      title: 'An event with no end date',
-
-      color: colors.yellow,
-
-      actions: this.actions
-
-    },
-
-    {
-
-      start: subDays(endOfMonth(new Date()), 3),
-
-      end: addDays(endOfMonth(new Date()), 3),
-
-      title: 'A long event that spans 2 months',
-
-      color: colors.blue,
-
-      allDay: true
-
-    },
-
-    {
-
-      start: addHours(startOfDay(new Date()), 2),
-
-      end: new Date(),
-
-      title: 'A draggable and resizable event',
-
-      color: colors.yellow,
-
-      actions: this.actions,
-
-      resizable: {
-
-        beforeStart: true,
-
-        afterEnd: true
-
-      },
-
-      draggable: true
-
-    }
 
   ];
 
 
 
-  activeDayIsOpen: boolean = true;
+  activeDayIsOpen = true;
 
 
 
   constructor(private modal: NgbModal) {
+
+  }
+
+
+
+  ngOnInit() {
+
+
 
   }
 
@@ -295,6 +263,29 @@ export class EventCalComponent {
     });
 
     this.refresh.next();
+
+  }
+
+
+
+  changeEvent(value: Date, index) {
+
+    const a = value;
+
+    const b = new Date(a.getUTCFullYear(), a.getMonth(), a.getDate(), a.getHours() + Number(this.hourSelector.value), a.getMinutes());
+
+    console.log(b);
+
+    this.events[index].end = b;
+    this.refresh.next();
+    console.log(this.events);
+  }
+
+
+
+  saveReservation() {
+
+
 
   }
 
