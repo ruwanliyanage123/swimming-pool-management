@@ -52,18 +52,18 @@ export class ContactComponent implements OnInit {
 
 
 
-  // submitContactUsData(data) {
+  submitContactUsData(data) {
 
-  //   if(this.service.addContactUsForum(data)) {
+    if(this.service.addContactUsForum(data)) {
 
-  //     console.log ('ado anna weda');
+      console.log ('ado anna weda');
 
-  //   } else {
+    } else {
 
-  //     console.log ('kela una');
+      console.log ('kela una');
 
-  //   }
+    }
 
-  // }
+  }
 
 }
